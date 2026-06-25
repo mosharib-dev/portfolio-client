@@ -1,6 +1,6 @@
 const achievements = [
   { icon: '🥇', title: 'Branch Rank 1 – Semester 1', sub: 'Computer Science (AI) branch · Supaul College of Engineering' },
-  { icon: '🏆', title: 'University Rank 1 – Semester 4', sub: 'Top across entire branch at university level' },
+  { icon: '🏆', title: 'University Rank 1 – Semester 4', sub: 'Top across branch at university level' },
   { icon: '🎯', title: '1st Rank – College Coding Contest', sub: 'Organized by College Coding Club' },
   { icon: '🎓', title: 'Scholarship for Academic Excellence', sub: 'Awarded for outstanding performance in 12th grade' },
   { icon: '💻', title: '100+ DSA Problems Solved', sub: 'LeetCode · GeeksforGeeks · CodeChef · HackerRank' },

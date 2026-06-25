@@ -76,8 +76,8 @@ export default function Contact() {
 
             <div style={{ display: 'flex', gap: '0.75rem' }}>
               {[
-                { icon: <Github size={18} />, href: 'https://github.com/mohammadmosharib', label: 'GitHub' },
-                { icon: <Linkedin size={18} />, href: 'https://linkedin.com/in/mohammadmosharib', label: 'LinkedIn' },
+                { icon: <Github size={18} />, href: 'https://github.com/mosharib-dev', label: 'GitHub' },
+                { icon: <Linkedin size={18} />, href: 'https://www.linkedin.com/in/mohammad-mosharib/', label: 'LinkedIn' },
               ].map(({ icon, href, label }) => (
                 <a key={label} href={href} target="_blank" rel="noopener"
                   title={label}

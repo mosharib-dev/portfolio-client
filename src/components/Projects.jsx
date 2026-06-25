@@ -7,8 +7,8 @@ const projects = [
     description:
       'An Airbnb-inspired platform with full CRUD, category-based filtering, secure authentication, and interactive GeoJSON maps. Includes a booking system with date conflict detection, PDF ticket generation, and email confirmation.',
     tech: ['Node.js', 'Express.js', 'MongoDB Atlas', 'Passport.js', 'Cloudinary', 'Mapbox GL JS', 'PDFKit', 'Nodemailer', 'EJS', 'Bootstrap 5'],
-    live: '#',
-    github: '#',
+    live: 'https://wanderlust-project-dr7b.onrender.com/',
+    github: 'https://github.com/mosharib-dev/wanderlust-project',
     color: '#4f8ef7',
     highlights: ['Full CRUD + category filtering', 'Secure auth via Passport.js', 'Cloudinary image storage', 'PDF tickets + email confirmation'],
   },

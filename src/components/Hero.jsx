@@ -74,7 +74,7 @@ export default function Hero() {
             onMouseLeave={e => e.currentTarget.style.background = 'var(--accent)'}>
             <Mail size={16} /> Get in Touch
           </a>
-          <a href="https://github.com/mohammadmosharib" target="_blank" rel="noopener"
+          <a href="https://github.com/mosharib-dev" target="_blank" rel="noopener"
             style={{ padding: '0.75rem 1.75rem', background: 'transparent', color: 'var(--text)',
               border: '1.5px solid var(--border)', borderRadius: '8px', fontWeight: 600, fontSize: '0.9rem',
               display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s' }}
@@ -82,7 +82,7 @@ export default function Hero() {
             onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}>
             <Github size={16} /> GitHub
           </a>
-          <a href="https://linkedin.com/in/mohammadmosharib" target="_blank" rel="noopener"
+          <a href="https://www.linkedin.com/in/mohammad-mosharib/" target="_blank" rel="noopener"
             style={{ padding: '0.75rem 1.75rem', background: 'transparent', color: 'var(--text)',
               border: '1.5px solid var(--border)', borderRadius: '8px', fontWeight: 600, fontSize: '0.9rem',
               display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'all 0.2s' }}
