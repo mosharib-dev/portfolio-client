@@ -65,7 +65,7 @@ export default function About() {
 
             {/* Resume download */}
             <div style={{ gridColumn: 'span 2' }}>
-              <a href="/resume.pdf" target="_blank"
+              <a href="https://drive.google.com/file/d/YOUR_RESUME_FILE_ID/view" target="_blank" rel="noopener" target="_blank"
                 style={{
                   display: 'block', textAlign: 'center',
                   padding: '0.85rem', border: '1.5px dashed var(--border)', borderRadius: '10px',
@@ -74,7 +74,7 @@ export default function About() {
                 }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--muted)' }}>
-                📄 Download Resume
+                📄 View Resume (Google Drive)
               </a>
             </div>
           </div>

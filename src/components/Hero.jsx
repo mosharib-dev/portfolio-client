@@ -91,19 +91,10 @@ export default function Hero() {
             <Linkedin size={16} /> LinkedIn
           </a>
         </div>
-
-        {/* Scroll indicator */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '0.4rem' }}>
-          <span style={{ fontSize: '0.75rem', color: 'var(--muted)', fontFamily: 'var(--mono)' }}>scroll down</span>
-          <ChevronDown size={18} color="var(--muted)" style={{ animation: 'bounce 2s infinite' }} />
-        </div>
       </div>
 
       <style>{`
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-        @keyframes bounce {
-          0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)}
-        }
       `}</style>
     </section>
   )

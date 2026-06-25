@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react'
 import axios from 'axios'
 
+const API = import.meta.env.VITE_API_URL || ''
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [status, setStatus] = useState(null) // null | 'loading' | 'success' | 'error'
@@ -12,10 +14,11 @@ export default function Contact() {
     e.preventDefault()
     setStatus('loading')
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/api/contact`, form)
+      await axios.post(`${API}/api/contact`, form)
       setStatus('success')
       setForm({ name: '', email: '', subject: '', message: '' })
-    } catch {
+    } catch (err) {
+      console.error('Contact error:', err)
       setStatus('error')
     }
   }
@@ -99,14 +102,14 @@ export default function Contact() {
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div>
-                <label style={{ fontSize: '0.78rem', color: 'var(--muted)', display: 'block', marginBottom: '0.4rem' }}>Name</label>
+                <label style={{ fontSize: '0.78rem', color: 'var(--muted)', display: 'block', marginBottom: '0.4rem' }}>Name *</label>
                 <input name="name" value={form.name} onChange={handleChange} required placeholder="Your name"
                   style={inputStyle}
                   onFocus={e => e.target.style.borderColor = 'var(--accent)'}
                   onBlur={e => e.target.style.borderColor = 'var(--border)'} />
               </div>
               <div>
-                <label style={{ fontSize: '0.78rem', color: 'var(--muted)', display: 'block', marginBottom: '0.4rem' }}>Email</label>
+                <label style={{ fontSize: '0.78rem', color: 'var(--muted)', display: 'block', marginBottom: '0.4rem' }}>Email *</label>
                 <input name="email" value={form.email} onChange={handleChange} required type="email" placeholder="you@example.com"
                   style={inputStyle}
                   onFocus={e => e.target.style.borderColor = 'var(--accent)'}
@@ -114,14 +117,14 @@ export default function Contact() {
               </div>
             </div>
             <div>
-              <label style={{ fontSize: '0.78rem', color: 'var(--muted)', display: 'block', marginBottom: '0.4rem' }}>Subject</label>
+              <label style={{ fontSize: '0.78rem', color: 'var(--muted)', display: 'block', marginBottom: '0.4rem' }}>Subject *</label>
               <input name="subject" value={form.subject} onChange={handleChange} required placeholder="What's this about?"
                 style={inputStyle}
                 onFocus={e => e.target.style.borderColor = 'var(--accent)'}
                 onBlur={e => e.target.style.borderColor = 'var(--border)'} />
             </div>
             <div>
-              <label style={{ fontSize: '0.78rem', color: 'var(--muted)', display: 'block', marginBottom: '0.4rem' }}>Message</label>
+              <label style={{ fontSize: '0.78rem', color: 'var(--muted)', display: 'block', marginBottom: '0.4rem' }}>Message *</label>
               <textarea name="message" value={form.message} onChange={handleChange} required rows={5}
                 placeholder="Tell me about the opportunity..."
                 style={{ ...inputStyle, resize: 'vertical', minHeight: '120px' }}
@@ -130,23 +133,36 @@ export default function Contact() {
             </div>
 
             {status === 'success' && (
-              <p style={{ color: 'var(--green)', fontSize: '0.875rem' }}>✓ Message sent! I'll get back to you soon.</p>
+              <div style={{
+                padding: '0.75rem 1rem',
+                background: 'rgba(34,197,94,0.1)',
+                border: '1px solid rgba(34,197,94,0.3)',
+                borderRadius: '8px'
+              }}>
+                ✓ Message sent successfully!
+              </div>
             )}
             {status === 'error' && (
-              <p style={{ color: '#f87171', fontSize: '0.875rem' }}>✗ Something went wrong. Please try again.</p>
+              <div style={{
+                padding: '0.75rem 1rem',
+                background: 'rgba(248,113,113,0.1)',
+                border: '1px solid rgba(248,113,113,0.3)',
+                borderRadius: '8px'
+              }}>
+                ✗ Something went wrong. Make sure the backend server is running and try again.
+              </div>
             )}
 
             <button type="submit" disabled={status === 'loading'}
-              style={{
-                padding: '0.8rem 1.75rem', background: 'var(--accent)', color: '#fff',
-                border: 'none', borderRadius: '8px', fontWeight: 600, fontSize: '0.9rem',
+                style={{
+                padding: '0.8rem 1.75rem', background: status === 'loading' ? 'var(--border)' : 'var(--accent)',
+                color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 600, fontSize: '0.9rem',
                 cursor: status === 'loading' ? 'wait' : 'pointer',
                 display: 'flex', alignItems: 'center', gap: '0.5rem',
-                opacity: status === 'loading' ? 0.7 : 1, transition: 'all 0.2s',
-                fontFamily: 'var(--sans)'
-              }}>
-              <Send size={15} />
-              {status === 'loading' ? 'Sending...' : 'Send Message'}
+                transition: 'all 0.2s', fontFamily: 'var(--sans)', width: 'fit-content'
+                }}>
+                <Send size={15} />
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
