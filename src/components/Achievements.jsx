@@ -1,5 +1,5 @@
 const achievements = [
-  {icon: '🏆',title: 'Consistent Academic Topper (Semesters 1–4)',sub: 'Rank 1 in CSE (AI) branch and College Topper in multiple semesters'}
+  { icon: '🏆', title: 'Consistent Academic Topper (Semesters 1–4)', sub: 'Rank 1 in CSE (AI) branch and College Topper in multiple semesters'},
   { icon: '🏆', title: 'University Rank 1 – Semester 4', sub: 'Top across branch at university level' },
   { icon: '🎯', title: '1st Rank – College Coding Contest', sub: 'Organized by College Coding Club' },
   { icon: '🎓', title: 'Scholarship for Academic Excellence', sub: 'Awarded for outstanding performance in 12th grade' },
