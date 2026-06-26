@@ -63,20 +63,35 @@ export default function About() {
               </div>
             ))}
 
-            {/* Resume download */}
-            <div style={{ gridColumn: 'span 2' }}>
-              <a href="https://drive.google.com/file/d/YOUR_RESUME_FILE_ID/view" target="_blank" rel="noopener" target="_blank"
-                style={{
-                  display: 'block', textAlign: 'center',
-                  padding: '0.85rem', border: '1.5px dashed var(--border)', borderRadius: '10px',
-                  color: 'var(--muted)', fontSize: '0.875rem', transition: 'all 0.2s',
-                  fontFamily: 'var(--mono)'
-                }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.color = 'var(--accent)' }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--muted)' }}>
-                📄 View Resume (Google Drive)
-              </a>
-            </div>
+          {/* Resume download */}
+          <div style={{ gridColumn: 'span 2' }}>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1X7iraGV2-Vqf_p4LOBv7QUgdwHEGkgUC"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'block',
+                textAlign: 'center',
+                padding: '0.85rem',
+                border: '1.5px dashed var(--border)',
+                borderRadius: '10px',
+                color: 'var(--muted)',
+                fontSize: '0.875rem',
+                transition: 'all 0.2s',
+                fontFamily: 'var(--mono)'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'var(--accent)'
+                e.currentTarget.style.color = 'var(--accent)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'var(--border)'
+                e.currentTarget.style.color = 'var(--muted)'
+              }}
+            >
+              📄 Download Resume
+            </a>
+          </div>
           </div>
         </div>
       </div>
